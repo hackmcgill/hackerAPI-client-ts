@@ -2,10 +2,11 @@
   "name": "hackerapi-client-ts",
   "version": "1.0.0",
   "description": "McHack's HackerAPI client",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "generate-barrels": "barrelsby --delete --directory ./lib -l below -q"
+    "generate-barrels": "barrelsby --delete --directory ./lib -l below -q",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -27,9 +28,10 @@
     "axios": "^0.18.0"
   },
   "devDependencies": {
-    "prettier": "^1.16.4",
     "@types/axios": "^0.14.0",
     "barrelsby": "^1.0.2",
+    "prettier": "^1.16.4",
+    "tsc": "^1.20150623.0",
     "tslint": "^5.12.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^8.0.1",
