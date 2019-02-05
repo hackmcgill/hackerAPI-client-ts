@@ -1,6 +1,6 @@
 {
   "name": "@hackmcgill/hackerapi-client-ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "McHack's HackerAPI client",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
