@@ -1,5 +1,5 @@
 import { AxiosPromise, AxiosResponse } from 'axios';
-import {  api as API, APIRoute } from '..';
+import { api as API, APIRoute } from '..';
 import APIResponse from '../APIResponse';
 
 class AuthAPI {
