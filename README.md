@@ -15,14 +15,14 @@ npm install hackerapi-client-ts
 At the entry-point of your code, you must provide the endpoint of the API:
 
 ```typescript
-import { api as API } from 'hackerapi-client-ts';
+import { api as API } from '@hackmcgill/hackerapi-client-ts';
 API.setURL('https://api.mchacks.ca');
 ```
 
 Afterwards, you can use whichever resource you would like. For example, you can create a Hacker as such:
 
 ```typescript
-import { Account } from 'hackerapi-client-ts';
+import { Account } from '@hackmcgill/hackerapi-client-ts';
 Account.create({
   accountType: UserType.HACKER;
   confirmed: true;
