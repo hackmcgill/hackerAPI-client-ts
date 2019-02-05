@@ -13,6 +13,11 @@ class API {
   }
   public setURL(url: string) {
     this.url = url;
+    for (const key in this.endpoints) {
+      if (this.endpoints.hasOwnProperty(key)) {
+        this.endpoints[key].baseURL = url;
+      }
+    }
   }
 
   /**
@@ -40,7 +45,7 @@ class API {
    * Create the basic endpoints handlers for CRUD operations
    */
   private createBasicCRUDEndpoints(name: string): Endpoint {
-    const endpoints = new Endpoint(name, `${this.url}/${name}`);
+    const endpoints = new Endpoint(name, this.url, name);
     return endpoints;
   }
 }

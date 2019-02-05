@@ -12,10 +12,12 @@ axios.interceptors.response.use(
 );
 
 export default class Endpoint {
+  public baseURL: string;
   private resourceURL: string;
   private name: string;
 
-  constructor(name: string, resourceURL: string) {
+  constructor(name: string, baseURL: string, resourceURL: string) {
+    this.baseURL = baseURL;
     this.resourceURL = resourceURL;
     this.name = name;
   }
@@ -28,14 +30,14 @@ export default class Endpoint {
     { id }: { id: string },
     config: AxiosRequestConfig = {}
   ): AxiosPromise {
-    return axios.get(`${this.resourceURL}/${id}`, config);
+    return axios.get(`${this.baseURL}/${this.resourceURL}/${id}`, config);
   }
   /**
    * Get all resources
    * @param {AxiosRequestConfig} config
    */
   public getAll(config: AxiosRequestConfig = {}): AxiosPromise {
-    return axios.get(this.resourceURL, config);
+    return axios.get(`${this.baseURL}/${this.resourceURL}`, config);
   }
   /**
    * Create a specified resource by calling axios.post
@@ -48,8 +50,8 @@ export default class Endpoint {
   ): AxiosPromise {
     const url =
       options && options.subURL
-        ? `${this.resourceURL}/${options.subURL}`
-        : this.resourceURL;
+        ? `${this.baseURL}/${this.resourceURL}/${options.subURL}`
+        : `${this.baseURL}/${this.resourceURL}`;
     const config = options && options.config ? options.config : {};
     return axios.post(url, toCreate, config);
   }
@@ -64,7 +66,11 @@ export default class Endpoint {
     toUpdate: any,
     config: AxiosRequestConfig = {}
   ): AxiosPromise {
-    return axios.put(`${this.resourceURL}/${id}`, toUpdate, config);
+    return axios.put(
+      `${this.baseURL}/${this.resourceURL}/${id}`,
+      toUpdate,
+      config
+    );
   }
   /**
    * Patch a specified resource by calling axios.patch
@@ -77,7 +83,11 @@ export default class Endpoint {
     toPatch: any,
     config: AxiosRequestConfig = {}
   ): AxiosPromise {
-    return axios.patch(`${this.resourceURL}/${id}`, toPatch, config);
+    return axios.patch(
+      `${this.baseURL}/${this.resourceURL}/${id}`,
+      toPatch,
+      config
+    );
   }
   /**
    * Delete a specified resource by calling axios.delete
@@ -88,7 +98,7 @@ export default class Endpoint {
     { id }: { id: string },
     config: AxiosRequestConfig = {}
   ): AxiosPromise {
-    return axios.delete(`${this.resourceURL}/${id}`, config);
+    return axios.delete(`${this.baseURL}/${this.resourceURL}/${id}`, config);
   }
   /**
    * Gets the name of api
