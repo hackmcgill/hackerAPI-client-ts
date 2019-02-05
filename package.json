@@ -1,0 +1,39 @@
+{
+  "name": "hackerapi-client-ts",
+  "version": "1.0.0",
+  "description": "McHack's HackerAPI client",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate-barrels": "barrelsby --delete --directory ./lib -l below -q"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackmcgill/hackerAPI-client-ts.git"
+  },
+  "keywords": [
+    "hackerAPI",
+    "mchacks",
+    "hackathon",
+    "registration"
+  ],
+  "author": "Pierre Theo Klein",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hackmcgill/hackerAPI-client-ts/issues"
+  },
+  "homepage": "https://github.com/hackmcgill/hackerAPI-client-ts#readme",
+  "dependencies": {
+    "axios": "^0.18.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.16.4",
+    "@types/axios": "^0.14.0",
+    "barrelsby": "^1.0.2",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.3.1"
+  }
+}
