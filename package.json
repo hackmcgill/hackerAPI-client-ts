@@ -2,8 +2,9 @@
   "name": "hackerapi-client-ts",
   "version": "1.0.0",
   "description": "McHack's HackerAPI client",
-  "main": "index.js",
-  "scripts": {
+  "main": "dist/index.js",
+  "types" : "dist/index.d.ts",
+   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "generate-barrels": "barrelsby --delete --directory ./lib -l below -q",
     "build": "tsc"
