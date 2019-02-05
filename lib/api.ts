@@ -9,6 +9,7 @@ class API {
 
   constructor() {
     this.endpoints = {};
+    this.url = 'http://localhost:3000';
   }
   public setURL(url: string) {
     this.url = url;

@@ -16,7 +16,7 @@ export interface IHacker {
   application: {
     portfolioURL: {
       // gcloud bucket link
-      resume: string;
+      resume?: string;
       github?: string;
       dropler?: string;
       personal?: string;
