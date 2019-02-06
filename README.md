@@ -1,13 +1,13 @@
 # hackerAPI-client-ts
 
-Typescript client for hackerAPI.
+Typescript client for [hackerAPI.](https://github.com/hackmcgill/hackerAPI)
 
 ## Installation
 
 To install, use npm:
 
 ```bash
-npm install hackerapi-client-ts
+npm install @hackmcgill/hackerapi-client-ts
 ```
 
 ## Usage
@@ -38,3 +38,13 @@ Account.create({
   id: '';
 });
 ```
+
+Documentation on the different routes can be [found here.](https://docs.mchacks.ca/api/)
+
+## Example usage
+
+Usage in a real-life repository can be [found here.](https://github.com/hackmcgill/hackerAPI-frontend)
+
+## Questions
+
+If you have questions about how to use this, shoot an email to <devops@mchacks.ca>, or create an [Issue.](https://github.com/hackmcgill/hackerAPI-client-ts/issues)
