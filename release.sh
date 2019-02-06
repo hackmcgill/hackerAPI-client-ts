@@ -46,7 +46,9 @@ echo "Compiling Code"
 echo "=============="
 tsc
 
+echo ""
 echo "Code compiled!"
+echo ""
 
 echo "=============="
 echo "Update Version"
