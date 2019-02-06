@@ -33,9 +33,7 @@ class AccountAPI {
   /**
    * Get the logged-in user's information.
    */
-  public async getSelf(
-    overrideCache?: boolean
-  ): Promise<AxiosResponse<APIResponse<IAccount>>> {
+  public async getSelf(): Promise<AxiosResponse<APIResponse<IAccount>>> {
     const value = await API.getEndpoint(APIRoute.ACCOUNT_SELF).getAll();
     return value;
   }
@@ -43,10 +41,7 @@ class AccountAPI {
    * Get information about a user
    * @param id the ID of the account
    */
-  public async get(
-    id: string,
-    overrideCache?: boolean
-  ): Promise<AxiosResponse<APIResponse<IAccount>>> {
+  public async get(id: string): Promise<AxiosResponse<APIResponse<IAccount>>> {
     const value = await API.getEndpoint(APIRoute.ACCOUNT).getOne({ id });
     return value;
   }
@@ -71,6 +66,14 @@ class AccountAPI {
    */
   public invite(info: IInviteInfo): AxiosPromise<APIResponse<{}>> {
     return API.getEndpoint(APIRoute.ACCOUNT_INVITE).create(info);
+  }
+
+  /**
+   * Get all invites for the application.
+   * @param {{email: string, accountType: string}} info
+   */
+  public getInvites(): AxiosPromise<APIResponse<IInviteInfo[]>> {
+    return API.getEndpoint(APIRoute.ACCOUNT_INVITE).getAll();
   }
 }
 export const Account = new AccountAPI();

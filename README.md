@@ -19,7 +19,7 @@ import { api as API } from '@hackmcgill/hackerapi-client-ts';
 API.setURL('https://api.mchacks.ca');
 ```
 
-Afterwards, you can use whichever resource you would like. For example, you can create a Hacker as such:
+Afterwards, you can use whichever resource you would like. For example, you can create an Account as such:
 
 ```typescript
 import { Account } from '@hackmcgill/hackerapi-client-ts';

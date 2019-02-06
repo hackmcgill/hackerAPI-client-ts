@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "generate-barrels": "barrelsby --delete --directory ./lib -l below -q",
+    "generate-barrels": "barrelsby --delete --directory ./lib -q",
     "build": "tsc"
   },
   "repository": {

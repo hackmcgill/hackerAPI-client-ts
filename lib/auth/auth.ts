@@ -1,6 +1,7 @@
 import { AxiosPromise, AxiosResponse } from 'axios';
 import { api as API, APIRoute } from '..';
 import APIResponse from '../APIResponse';
+import { IRole } from '../role/IRole';
 
 class AuthAPI {
   constructor() {
@@ -11,6 +12,8 @@ class AuthAPI {
     API.createEntity(APIRoute.AUTH_CONFIRM_ACCT);
     API.createEntity(APIRoute.AUTH_CHANGE_PASS);
     API.createEntity(APIRoute.AUTH_RESEND_CONF_EMAIL);
+    API.createEntity(APIRoute.AUTH_ROLE);
+    API.createEntity(APIRoute.AUTH_ROLEBINDING);
   }
   /**
    * Logs in a user to the API.
@@ -57,6 +60,10 @@ class AuthAPI {
     );
     return result;
   }
+  /**
+   * Confirm an account using the given token.
+   * @param token The confirmation token.
+   */
   public async confirm(token: string): Promise<AxiosResponse<APIResponse<{}>>> {
     const result = await API.getEndpoint(APIRoute.AUTH_CONFIRM_ACCT).create(
       undefined,
@@ -91,6 +98,17 @@ class AuthAPI {
    */
   public resendConfirmationEmail(): AxiosPromise<APIResponse<{}>> {
     return API.getEndpoint(APIRoute.AUTH_RESEND_CONF_EMAIL).getAll();
+  }
+
+  /**
+   * Get all of the roles of the API
+   */
+  public getRoles(): AxiosPromise<APIResponse<IRole[]>> {
+    return API.getEndpoint(APIRoute.AUTH_ROLE).getAll();
+  }
+
+  public getRoleBindings(id: string): AxiosPromise<APIResponse<IRole[]>> {
+    return API.getEndpoint(APIRoute.AUTH_ROLEBINDING).getOne({ id });
   }
 }
 export const Auth = new AuthAPI();
